@@ -5,6 +5,12 @@
 # build results
 OnlineCompiler/obj/
 OnlineCompiler/bin/
+
 OnlineCompiler.Tests/obj/
 OnlineCompiler.Tests/bin/
 
+OnlineCompiler/node_modules/
+
+
+# static resources
+OnlineCompiler/wwwroot/
