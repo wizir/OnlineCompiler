@@ -19,7 +19,7 @@ namespace OnlineCompiler
         {
             services.AddControllersWithViews();
 
-            services.AddSingleton<IWebpackAssetsResolver>(new WebpackAssetsResolver());
+            services.AddSingleton<IWebpackAssetsResolver, WebpackAssetsResolver>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,11 +1,16 @@
+@using OnlineCompiler.Utilities
 <!DOCTYPE html>
 <html>
 <head>
     <title>Online Compiler</title>
+    
+    @Context.RenderStylesheets()
 </head>
 <body>
 
 @RenderBody()
 
+
+@Context.RenderScripts()
 </body>
 </html>
