@@ -1,4 +1,5 @@
-
+const path = require('path');
+const AssetsPlugin = require('assets-webpack-plugin');
 
 
 
@@ -9,5 +10,9 @@ module.exports = {
     },
     resolve: {
         extensions: [ '.js', '.scss' ]
-    }
+    },
+    plugins: [
+        new AssetsPlugin({path: path.resolve(__dirname, '../wwwroot')})
+    ]
+    
 };
