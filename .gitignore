@@ -11,3 +11,6 @@ OnlineCompiler.Tests/bin/
 
 OnlineCompiler/node_modules/
 
+
+# static resources
+OnlineCompiler/wwwroot/
