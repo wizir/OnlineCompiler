@@ -36,24 +36,36 @@ namespace OnlineCompiler.Utilities
         
         public string GetScriptTag(string name)
         {
-            if (_env.IsDevelopment())
+            if (_assets.TryGetValue(name, out var asset))
             {
-                return $"<script src=\"https://localhost:8080/{_assets[name].Js}\"></script>";
+                if (_env.IsDevelopment())
+                {
+                    return $"<script src=\"https://localhost:8080/{asset.Js}\"></script>";
+                    
+                }
+                return $"<script src=\"{asset.Js}\"></script>";
             }
             
-            return $"<script src=\"{_assets[name].Js}\"></script>";
+            throw new KeyNotFoundException($"Entry \"{name}\" not registered in webpack.config");
         }
 
         public string GetStylesheetTag(string name)
         {
-            if (_env.IsDevelopment())
+            if (_assets.TryGetValue(name, out var asset))
             {
-                return $"<script src=\"https://localhost:8080/{_assets[name].Js}\"></script>";
+
+                if (_env.IsDevelopment())
+                {
+                    return $"<script src=\"https://localhost:8080/{asset.Js}\"></script>";
+                }
+
+                return $"<link rel=\"stylesheet\" href=\"{asset.Css}\"></script>";
             }
-            
-            return $"<link rel=\"stylesheet\" href=\"{_assets[name].Css}\"></script>";
+
+            throw new KeyNotFoundException($"Entry \"{name}\" not registered in webpack.config");
         }
 
+        
         private class WebpackAssetsEntry
         {
             public string Js { get; set; }

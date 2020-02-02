@@ -2,10 +2,19 @@
 @{
     Layout = "_Layout";
     
-    Context.AddStylesheet("Styles");
-    Context.AddScript("Header");
+    Context.AddStylesheet("Home");
+    Context.AddScript("Home");
 }
 
-<div>
-    Home index
+<div class="container">
+    <div>
+        <div class="toolbox">
+            This is toolbox
+        </div>
+    </div>
+
+    <div>
+        <div id="editor"></div>
+        <div id="console"></div>
+    </div>
 </div>
