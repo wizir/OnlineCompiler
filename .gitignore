@@ -1,0 +1,10 @@
+
+# environment
+.idea/
+
+# build results
+OnlineCompiler/obj/
+OnlineCompiler/bin/
+OnlineCompiler.Tests/obj/
+OnlineCompiler.Tests/bin/
+
