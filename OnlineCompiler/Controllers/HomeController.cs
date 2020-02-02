@@ -1,12 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
+using OnlineCompiler.Utilities;
 
 namespace OnlineCompiler.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public IActionResult Index()
         {
             return View();
         }
+
+        public HomeController(IWebpackAssetsResolver webpackAssetsResolver) : base(webpackAssetsResolver){}
     }
 }

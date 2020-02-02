@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using OnlineCompiler.Utilities;
 
 namespace OnlineCompiler
 {
@@ -17,6 +18,8 @@ namespace OnlineCompiler
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddSingleton<IWebpackAssetsResolver>(new WebpackAssetsResolver());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
