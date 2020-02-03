@@ -7,7 +7,7 @@ class EditorComponent extends Component{
     
     render() {
         return (
-          <div>
+          <div className="Editor">
               Editor component
           </div>  
         )

@@ -5,7 +5,7 @@
 @import 'Footer';
 @import '../Components/Console/Console';
 @import '../Components/Editor/Editor';
-@import '../Components/Files/FilesComponent/Files';
+@import '../Components/SolutionExplorer/SolutionExplorer';
 @import '../Components/IDE/IDE';
 @import '../Components/Toolbar/Toolbar';
 
@@ -18,4 +18,33 @@ body{
 
 .container{
   display: flex;
+}
+
+
+.row{
+  display: flex;
+}
+
+.flex-1x{
+  flex-grow: 1;
+}
+
+
+.flex-2x{
+  flex-grow: 2;
+}
+
+
+.flex-3x{
+  flex-grow: 3;
+}
+
+
+.flex-4x{
+  flex-grow: 4;
+}
+
+
+.flex-5x{
+  flex-grow: 5;
 }
