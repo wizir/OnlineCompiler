@@ -10,7 +10,16 @@ namespace OnlineCompiler.Utilities
     {
         private const string Stylesheet = "stylesheet";
         private const string Script = "script";
-        private static IWebpackAssetsResolver _assetsResolver;
+        private const string AssetsResolver = "assetsresolver";
+        
+        /// <summary>
+        /// This method has to be called before <see cref="RenderScripts"/> and <see cref="RenderStylesheets"/>
+        /// </summary>        
+        public static void RegisterWebpackAssetsResolver(this HttpContext context, IWebpackAssetsResolver resolver)
+        {
+            context.Items[AssetsResolver] = resolver;
+        }
+        
         
         public static void AddStylesheet(this HttpContext context, string name)
         {
@@ -32,43 +41,39 @@ namespace OnlineCompiler.Utilities
             context.Items[Script] = hashSet;
         }
 
-        public static void RegisterWebpackAssetsResolver(this HttpContext context, IWebpackAssetsResolver resolver)
-        {
-            _assetsResolver = resolver;
-        }
-        
         
         public static HtmlString RenderScripts(this HttpContext context)
         {
+            var builder = new StringBuilder();
+            
             if (context.Items[Script] is HashSet<string> set)
             {
-                var builder = new StringBuilder();
                 foreach (var script in set)
                 {
-                    builder.AppendLine(_assetsResolver.GetScriptTag(script));
+                    var resolver = context.Items[AssetsResolver] as IWebpackAssetsResolver;
+                    builder.AppendLine(resolver?.GetScriptTag(script));
                 }
-
-                return new HtmlString(builder.ToString());
             }
 
-            return null;
+            return new HtmlString(builder.ToString());
         }
         
         
         public static HtmlString RenderStylesheets(this HttpContext context)
         {
+            var builder = new StringBuilder();
+            
             if (context.Items[Stylesheet] is HashSet<string> set)
             {
-                var builder = new StringBuilder();
                 foreach (var stylesheet in set)
                 {
-                    builder.AppendLine(_assetsResolver.GetStylesheetTag(stylesheet));
+                    var resolver = context.Items[AssetsResolver] as IWebpackAssetsResolver;
+                    builder.AppendLine(resolver?.GetStylesheetTag(stylesheet));
                 }
 
-                return new HtmlString(builder.ToString());
             }
-
-            return null;
+            
+            return new HtmlString(builder.ToString());
         }
     }
 }
