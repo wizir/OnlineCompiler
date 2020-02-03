@@ -3,9 +3,7 @@ const AssetsPlugin = require('assets-webpack-plugin');
 
 module.exports = {
     entry: {
-        Styles: './Style/Styles.scss' ,
-        Topbar: './Style/Topbar.scss',
-        Footer: './Style/Footer.scss',
+        Styles: './Style/Main.scss' ,
         Home: './Views/Home/Home.tsx'
     },
     resolve: {
