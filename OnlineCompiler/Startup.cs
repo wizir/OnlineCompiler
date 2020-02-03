@@ -20,8 +20,6 @@ namespace OnlineCompiler
         {
             services.AddControllersWithViews();
             services.AddLiveReload();
-            
-            services.AddSingleton<IWebpackAssetsResolver, WebpackAssetsResolver>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -33,6 +31,7 @@ namespace OnlineCompiler
                 app.UseLiveReload();
             }
 
+            app.UseWebpackAssets(new WebpackAssetsResolver(env));
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>

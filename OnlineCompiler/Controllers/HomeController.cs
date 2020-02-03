@@ -9,7 +9,5 @@ namespace OnlineCompiler.Controllers
         {
             return View();
         }
-
-        public HomeController(IWebpackAssetsResolver webpackAssetsResolver) : base(webpackAssetsResolver){}
     }
 }
