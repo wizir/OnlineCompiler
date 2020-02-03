@@ -1,19 +1,21 @@
-@using OnlineCompiler.Utilities
 <!DOCTYPE html>
 <html>
 <head>
     <title>Online Compiler</title>
     
+    @{
+        Context.AddStylesheet("Topbar");
+        Context.AddStylesheet("Footer");
+    }
     @Context.RenderStylesheets()
 </head>
 <body>
 
-@Html.Partial("Header")
-
+@await Html.PartialAsync("Topbar")
 
 @RenderBody()
 
-
+@await Html.PartialAsync("Footer")
 @Context.RenderScripts()
 </body>
 </html>
