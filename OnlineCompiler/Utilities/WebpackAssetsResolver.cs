@@ -16,8 +16,12 @@ namespace OnlineCompiler.Utilities
     {
         private IWebHostEnvironment _env;
         private IReadOnlyDictionary<string, WebpackAssetsEntry> _assets;
-        public WebpackAssetsResolver(IWebHostEnvironment env)
+        private string _localIp;
+        
+        public WebpackAssetsResolver(IWebHostEnvironment env, IIpAddressResolver ipAddressResolver)
         {
+            _localIp = ipAddressResolver.GetLocalAddress().ToString();
+            
             _env = env;
             var fileName = "webpack-assets.json";
             var fileInfo = _env.WebRootFileProvider.GetFileInfo(fileName);
@@ -40,7 +44,7 @@ namespace OnlineCompiler.Utilities
             {
                 if (_env.IsDevelopment())
                 {
-                    return $"<script src=\"https://localhost:8080/{asset.Js}\"></script>";
+                    return $"<script src=\"https://{_localIp}:8080/{asset.Js}\"></script>";
                     
                 }
                 return $"<script src=\"{asset.Js}\"></script>";
@@ -56,7 +60,7 @@ namespace OnlineCompiler.Utilities
 
                 if (_env.IsDevelopment())
                 {
-                    return $"<script src=\"https://localhost:8080/{asset.Js}\"></script>";
+                    return $"<script src=\"https://{_localIp}:8080/{asset.Js}\"></script>";
                 }
 
                 return $"<link rel=\"stylesheet\" href=\"{asset.Css}\"></script>";

@@ -31,7 +31,7 @@ namespace OnlineCompiler
                 app.UseLiveReload();
             }
 
-            app.UseWebpackAssets(new WebpackAssetsResolver(env));
+            app.UseWebpackAssets(new WebpackAssetsResolver(env, new IpAddressResolver()));
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
