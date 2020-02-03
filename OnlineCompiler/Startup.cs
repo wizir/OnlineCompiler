@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using OnlineCompiler.Utilities;
+using Westwind.AspNetCore.LiveReload;
 
 namespace OnlineCompiler
 {
@@ -18,7 +19,8 @@ namespace OnlineCompiler
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
+            services.AddLiveReload();
+            
             services.AddSingleton<IWebpackAssetsResolver, WebpackAssetsResolver>();
         }
 
@@ -28,6 +30,7 @@ namespace OnlineCompiler
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseLiveReload();
             }
 
             app.UseRouting();
