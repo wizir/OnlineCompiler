@@ -4,7 +4,13 @@ type ToolbarProps = {
     languages: {
         id: number,
         name: string,
+        placeholder: string
     }[],
+    selectedLanguage:{
+        id: number,
+        name: string,
+        placeholder: string
+    }, 
     compileHandler: () => void,
     languageSelectedHandler: (sender: any, id: number) => void
     
@@ -20,7 +26,7 @@ const ToolbarComponent: React.FunctionComponent<ToolbarProps> = (props: ToolbarP
                         className="Toolbar_Language" 
                         key={l.id}> {l.name}</button>)}
                 </div>
-            <button className="Toolbar_CompileButton" onClick={props.compileHandler}>Compile</button>
+            <button className="Toolbar_CompileButton" onClick={props.compileHandler}>Run</button>
         </div>
     )        
 };
