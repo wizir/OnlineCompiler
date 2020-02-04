@@ -16,7 +16,7 @@
   background: $green;
   padding: 10px 20px;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   outline: none;
   
   &:hover{
@@ -31,12 +31,18 @@
 
 .Toolbar_Language{
   margin: 10px;
-  width: 60px;
+  width: 80px;
   border: none;
-  background: $yellow;
+  background: $secondary-2;
   padding: 8px 0;
+  font-size: 1.1rem;
+  
+  &:hover{
+    background: lighten($yellow, 5);
+  }
 }
 
 .Toolbar_Language--selected{
-  border: 1px solid blue;
+  background: $yellow;
+  font-weight: bold;
 }
