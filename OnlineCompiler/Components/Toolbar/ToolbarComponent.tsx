@@ -1,16 +1,25 @@
 ﻿import * as React from 'react';
 
-
-
-class ToolbarComponent extends React.Component {
+type ToolbarProps = {
+    languages: {
+        id: number,
+        name: string,
+    }[],
+    compileHandler: () => void,
+    languageSelectedHandler: () => void
     
-    render() {
-        return (
-            <div>
-                this is toolbar
-            </div>
-        )        
-    }
 }
+
+const ToolbarComponent: React.FunctionComponent<ToolbarProps> = (props: ToolbarProps) => {
+
+    return (
+        <div className="Toolbar">
+                <div className="Toolbar_Languages">
+                    {props.languages.map(l => <span key={l.id}> {l.name}</span>)}
+                </div>
+            <button className="Toolbar_CompileButton">Compile</button>
+        </div>
+    )        
+};
 
 export default ToolbarComponent;

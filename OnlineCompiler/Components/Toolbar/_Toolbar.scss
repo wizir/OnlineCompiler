@@ -1,1 +1,26 @@
 ﻿
+.Toolbar{
+  padding: 5px;
+}
+
+.Toolbar_CompileButton{
+  float: right;
+  margin: 5px 15px;
+  border: none;
+  background: $green;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  outline: none;
+  
+  &:hover{
+    background: lighten($green, 3);
+  }
+}
+
+
+.Toolbar_Languages{
+  margin-left: 40px;
+  display: inline-block;
+}

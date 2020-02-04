@@ -9,11 +9,26 @@ import ConsoleComponent from "../Console/ConsoleComponent";
 
 class IDEComponent extends React.Component{
     
+    
+    compileHandler = () => {};
+
+    languageSelectedHandler = () => {};
+
+
     render() {
+        
+        const languages = [
+            {id: 1, name: "Js"},
+            {id: 2, name: "C++"},
+            {id: 3, name: "Python"},
+        ];
+        
+        
+        
         return (
             <div className="IDE">
                 
-                <ToolbarComponent/>
+                <ToolbarComponent languages={languages} compileHandler={this.compileHandler} languageSelectedHandler={this.languageSelectedHandler} />
                 
                 <div className="row">
                     
