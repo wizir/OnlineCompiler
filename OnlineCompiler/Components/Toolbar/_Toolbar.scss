@@ -1,10 +1,16 @@
 ﻿
 .Toolbar{
-  padding: 5px;
+  @extend .tile;
+  
+  margin-top: 10px !important;
+  display: flex;
+  background: $dark;
+  justify-content: space-between;
+  align-items: center
 }
 
 .Toolbar_CompileButton{
-  float: right;
+    
   margin: 5px 15px;
   border: none;
   background: $green;
@@ -21,6 +27,19 @@
 
 
 .Toolbar_Languages{
-  margin-left: 40px;
-  display: inline-block;
+  margin-left: 10px;
+}
+
+.Toolbar_Language{
+  margin: 10px;
+  width: 60px;
+  border: none;
+  background: $yellow;
+  padding: 8px 0;
+  border-radius: 15px;
+  
+}
+
+.Toolbar_Language--selected{
+  border: 1px solid blue;
 }

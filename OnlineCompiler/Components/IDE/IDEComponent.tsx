@@ -5,14 +5,17 @@ import SolutionExplorerComponent from "../SolutionExplorer/SolutionExplorerCompo
 import EditorComponent from "../Editor/EditorComponent";
 import ConsoleComponent from "../Console/ConsoleComponent";
 
-
+type IDEState = {
+    selectedLanguageId: number,
+    
+}
 
 class IDEComponent extends React.Component{
     
     
     compileHandler = () => {};
 
-    languageSelectedHandler = () => {};
+    languageSelectedHandler = (selectedId: number) => { console.log(selectedId)};
 
 
     render() {
@@ -21,6 +24,7 @@ class IDEComponent extends React.Component{
             {id: 1, name: "Js"},
             {id: 2, name: "C++"},
             {id: 3, name: "Python"},
+            {id: 4, name: "bash"}
         ];
         
         
@@ -40,7 +44,10 @@ class IDEComponent extends React.Component{
                     </div>
                 </div>
                 
-                <ConsoleComponent/>
+                <div >
+                    <ConsoleComponent/>
+                    
+                </div>
             </div>
         )
     }

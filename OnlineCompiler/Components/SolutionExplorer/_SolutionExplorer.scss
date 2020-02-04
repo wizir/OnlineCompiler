@@ -1,3 +1,4 @@
 ﻿.SolutionExplorer{
-  border: 1px solid #333;
+  @extend .tile;
+  flex: 1;
 }

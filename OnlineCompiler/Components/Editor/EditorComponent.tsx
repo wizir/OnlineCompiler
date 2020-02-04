@@ -8,8 +8,9 @@ class EditorComponent extends Component{
     render() {
         return (
           <div className="Editor">
-              Editor component
-          </div>  
+              <h3>Editor</h3>
+              <textarea className="Editor_Textbox"/>
+          </div>
         )
     }
 }

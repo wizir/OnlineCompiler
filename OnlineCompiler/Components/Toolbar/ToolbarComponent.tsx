@@ -6,7 +6,7 @@ type ToolbarProps = {
         name: string,
     }[],
     compileHandler: () => void,
-    languageSelectedHandler: () => void
+    languageSelectedHandler: (sender: any, id: number) => void
     
 }
 
@@ -15,9 +15,12 @@ const ToolbarComponent: React.FunctionComponent<ToolbarProps> = (props: ToolbarP
     return (
         <div className="Toolbar">
                 <div className="Toolbar_Languages">
-                    {props.languages.map(l => <span key={l.id}> {l.name}</span>)}
+                    {props.languages.map(l => <button 
+                        onClick={props.languageSelectedHandler.bind(this, l.id)} 
+                        className="Toolbar_Language" 
+                        key={l.id}> {l.name}</button>)}
                 </div>
-            <button className="Toolbar_CompileButton">Compile</button>
+            <button className="Toolbar_CompileButton" onClick={props.compileHandler}>Compile</button>
         </div>
     )        
 };

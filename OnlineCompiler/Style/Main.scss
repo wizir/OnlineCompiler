@@ -14,10 +14,23 @@
 body{
   margin: 0;
   font-family: 'Roboto', sans-serif;
+  background: $black;
+}
+
+h3{
+  margin: 0;
+  padding: 0;
 }
 
 .container{
   display: flex;
+}
+
+.tile{
+  margin: 5px;
+  border-radius: 10px;
+  background: $dark;
+  padding: 10px;
 }
 
 
@@ -48,3 +61,4 @@ body{
 .flex-5x{
   flex-grow: 5;
 }
+

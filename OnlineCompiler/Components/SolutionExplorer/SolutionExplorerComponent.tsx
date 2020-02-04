@@ -4,7 +4,12 @@
 class SolutionExplorerComponent extends React.Component{
     
     render() {
-        return <div className="SolutionExplorer">Files component</div>
+        return (
+            <div className="SolutionExplorer">
+                <h3>Solution Explorer</h3>   
+                <div >Files component</div>
+            </div>
+        );
     }
 }
 

@@ -1,3 +1,18 @@
 ﻿.Editor{
-  border: 1px solid black;
+  @extend .tile;
+
+  padding: 10px;
+}
+
+
+.Editor_Textbox{
+  width: 100%;
+  background: $dark;
+  border: 1px solid #000;
+  color: #fff;
+  resize: none;
+  
+  &:focus{
+    outline: none;
+  }
 }
