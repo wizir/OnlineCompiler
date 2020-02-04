@@ -11,8 +11,7 @@ module.exports = merge(common, {
       filename: '[name].js'
    },
    devServer:{
-      host: '127.0.0.1',
-      port: '8080',
+      host: '0.0.0.0',
       disableHostCheck: true,
       https: true
    },
