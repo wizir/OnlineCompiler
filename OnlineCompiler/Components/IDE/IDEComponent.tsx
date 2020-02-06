@@ -26,12 +26,10 @@ class IDEComponent extends React.Component<{}, IDEState>{
             { id: 4, name: "bash", placeholder: "bash placeholder" }
         ];
 
-        
-        this.setState({
+        this.state = {
             languages: languages,
-            selectedLanguage: languages[0]
-        })
-
+            selectedLanguage: languages[0],
+        };
     }
     
     compileHandler = () => {};
@@ -47,7 +45,10 @@ class IDEComponent extends React.Component<{}, IDEState>{
         return (
             <div className="IDE">
                 
-                <ToolbarComponent languages={this.state.languages} selectedLanguage={this.state.selectedLanguage} compileHandler={this.compileHandler} languageSelectedHandler={this.languageSelectedHandler} />
+                <ToolbarComponent languages={this.state.languages} 
+                                  selectedLanguage={this.state.selectedLanguage} 
+                                  compileHandler={this.compileHandler} 
+                                  languageSelectedHandler={this.languageSelectedHandler} />
                 
                 <div className="row">
                     
