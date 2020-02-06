@@ -13,5 +13,5 @@ OnlineCompiler/node_modules/
 
 
 # static resources
-/OnlineCompiler/wwwroot/
-!/OnlineCompiler/wwwroot/lang_desc/**/*
+/OnlineCompiler/wwwroot/*
+!/OnlineCompiler/wwwroot/lang_desc/
