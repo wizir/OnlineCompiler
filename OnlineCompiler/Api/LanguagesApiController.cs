@@ -1,16 +1,23 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using OnlineCompiler.Features;
 using OnlineCompiler.Model;
 
 namespace OnlineCompiler.Api
 {
     public class LanguagesApiController : Controller
     {
+        private readonly ILanguagesProvider _provider;
 
-        [Route("/api/languages")]
-        public IEnumerable<ProgrammingLanguage> GetAvailableProgrammingLanguages()
+        public LanguagesApiController(ILanguagesProvider provider)
         {
-            return new[] {new ProgrammingLanguage()};
+            _provider = provider;
+        }
+        
+        [Route("/api/languages")]
+        public IEnumerable<Language> GetAvailableProgrammingLanguages()
+        {
+            return _provider.GetAvailable();
         }
     }
 }

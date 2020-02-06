@@ -14,6 +14,7 @@
       <TypeScriptCompile Include="Components\Console\ConsoleComponent.tsx" />
       <TypeScriptCompile Include="Components\Editor\EditorComponent.tsx" />
       <TypeScriptCompile Include="Components\IDE\IDEComponent.tsx" />
+      <TypeScriptCompile Include="Components\LanguagesApi.ts" />
       <TypeScriptCompile Include="Components\Toolbar\ToolbarComponent.tsx" />
       <TypeScriptCompile Include="Views\Home\Home.tsx" />
     </ItemGroup>
