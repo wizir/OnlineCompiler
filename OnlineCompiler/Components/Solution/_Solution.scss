@@ -1,4 +1,12 @@
 ﻿.Solution{
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+}
+
+.Solution_Content{
   @extend .tile;
-  background: $dark;
+  flex: 1 1 auto;
+  padding: 5px;
+  margin: 5px;
 }

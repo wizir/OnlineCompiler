@@ -1,4 +1,11 @@
 ﻿.Console{
+  display: flex;
+  
+}
+
+.Console_content{
   @extend .tile;
   height: 100px;
+  flex: 1 1 auto;
+  margin: 5px 10px 10px 5px;
 }

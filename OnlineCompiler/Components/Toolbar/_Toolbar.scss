@@ -1,14 +1,16 @@
-﻿
-.Toolbar{
-  @extend .tile;
+﻿.Toolbar{
   display: flex;
-  background: $dark;
   justify-content: space-between;
-  align-items: center
+  height: 100%;
+}
+
+.Toolbar_Content{
+  @extend .tile;
+  flex: 1 1 auto;
+  margin: 10px 10px 5px 5px;
 }
 
 .Toolbar_CompileButton{
-    
   margin: 5px 15px;
   border: none;
   background: $green;
@@ -25,6 +27,7 @@
 
 .Toolbar_Languages{
   margin-left: 10px;
+  
 }
 
 .Toolbar_Language{

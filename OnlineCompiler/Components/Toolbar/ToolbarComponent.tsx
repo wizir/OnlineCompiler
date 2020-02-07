@@ -13,6 +13,8 @@ const ToolbarComponent: React.FunctionComponent<ToolbarProps> = (props: ToolbarP
 
     return (
         <div className="Toolbar">
+            <div className="Toolbar_Content">
+                
                 <div className="Toolbar_Languages">
                     {props.availableLanguages.map(l => <button 
                         onClick={props.languageSelectedHandler.bind(this, l)} 
@@ -20,6 +22,7 @@ const ToolbarComponent: React.FunctionComponent<ToolbarProps> = (props: ToolbarP
                         key={l.id}> {l.name}</button>)}
                 </div>
             <button className="Toolbar_CompileButton" onClick={props.compileHandler}>Run</button>
+            </div>
         </div>
     )        
 };

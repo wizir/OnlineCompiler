@@ -6,7 +6,9 @@ class ConsoleComponent extends React.Component {
     render(){
         return (
             <div className="Console">
-                Console component
+                <div className="Console_content">
+                    Console component
+                </div>
             </div>
         )
     }
