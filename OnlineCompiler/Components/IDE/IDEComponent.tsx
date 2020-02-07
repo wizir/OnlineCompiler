@@ -4,34 +4,40 @@ import ToolbarComponent from "../Toolbar/ToolbarComponent";
 import SolutionExplorerComponent from "../SolutionExplorer/SolutionExplorerComponent";
 import EditorComponent from "../Editor/EditorComponent";
 import ConsoleComponent from "../Console/ConsoleComponent";
+import { ICompilerApi} from "../CompilerApi";
+import {Language} from "../../Model/Language.cs";
 
 type IDEState = {
-    selectedLanguage: { id: number, name: string, placeholder: string },
-    languages: { id: number, name: string, placeholder: string }[]
-        
+    selectedLanguage: Language,
+    availableLanguages: Language[]
 }
 
 
 
-class IDEComponent extends React.Component<{}, IDEState>{
+class IDEComponent extends React.Component<{api: ICompilerApi}, IDEState>{
     
+    api: ICompilerApi;
     
     constructor(props) {
         super(props);
-
-        const languages = [
-            { id: 1, name: "Js", placeholder: "Js placeholder" },
-            { id: 2, name: "C++", placeholder: "C++ placeholder" },
-            { id: 3, name: "Python", placeholder: "python placeholder" },
-            { id: 4, name: "bash", placeholder: "bash placeholder" }
-        ];
-
+        this.api = props.api;
+        
         this.state = {
-            languages: languages,
-            selectedLanguage: languages[0],
-        };
+            availableLanguages : [],
+            selectedLanguage: null
+        }
     }
+
     
+    componentDidMount(): void {
+        this.api.getLanguages().then(result => this.setState({
+            selectedLanguage: result[0],
+            availableLanguages: result
+        }));
+        
+    }
+
+
     compileHandler = () => {};
 
     languageSelectedHandler = (selectedId: number) => { console.log(selectedId)};
@@ -45,7 +51,7 @@ class IDEComponent extends React.Component<{}, IDEState>{
         return (
             <div className="IDE">
                 
-                <ToolbarComponent languages={this.state.languages} 
+                <ToolbarComponent availableLanguages={this.state.availableLanguages} 
                                   selectedLanguage={this.state.selectedLanguage} 
                                   compileHandler={this.compileHandler} 
                                   languageSelectedHandler={this.languageSelectedHandler} />

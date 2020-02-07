@@ -1,16 +1,9 @@
 ﻿import * as React from 'react';
+import {Language} from "../../Model/Language.cs";
 
 type ToolbarProps = {
-    languages: {
-        id: number,
-        name: string,
-        placeholder: string
-    }[],
-    selectedLanguage:{
-        id: number,
-        name: string,
-        placeholder: string
-    }, 
+    availableLanguages: Language[]
+    selectedLanguage: Language, 
     compileHandler: () => void,
     languageSelectedHandler: (sender: any, id: number) => void
     
@@ -21,7 +14,7 @@ const ToolbarComponent: React.FunctionComponent<ToolbarProps> = (props: ToolbarP
     return (
         <div className="Toolbar">
                 <div className="Toolbar_Languages">
-                    {props.languages.map(l => <button 
+                    {props.availableLanguages.map(l => <button 
                         onClick={props.languageSelectedHandler.bind(this, l.id)} 
                         className="Toolbar_Language" 
                         key={l.id}> {l.name}</button>)}
