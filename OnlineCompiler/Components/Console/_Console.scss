@@ -4,7 +4,7 @@
 }
 
 .Console_content{
-  @extend .tile;
+  @extend .tile-content;
   height: 100px;
   flex: 1 1 auto;
   margin: 5px;
