@@ -5,15 +5,18 @@
 @import 'Footer';
 @import '../Components/Console/Console';
 @import '../Components/Editor/Editor';
-@import '../Components/SolutionExplorer/SolutionExplorer';
+@import '../Components/Solution/Solution';
 @import '../Components/IDE/IDE';
 @import '../Components/Toolbar/Toolbar';
 
-
+html{
+  height: 100%;
+}
 
 body{
   margin: 0;
   font-family: 'Roboto', sans-serif;
+  height: 100%;
   background: $black;
 }
 
@@ -23,42 +26,34 @@ h3{
   color: $secondary-1;
 }
 
-.container{
-  display: flex;
-}
 
 .tile{
-  margin: 5px;
   background: $dark;
+  margin: 5px;
   padding: 10px;
+
 }
 
 
-.row{
+.container{
   display: flex;
+  flex-flow: column;
+  height: 100%;
+  
+  .header{
+    flex: 0 1 auto;  
+  }
+  
+  .content{
+    flex: 1 1 auto;
+  }
+  
+  .footer{
+    flex: 0 1 auto;
+  }
+  
 }
 
-.flex-1x{
-  flex-grow: 1;
+#IDE{
+  height: 100%;
 }
-
-
-.flex-2x{
-  flex-grow: 2;
-}
-
-
-.flex-3x{
-  flex-grow: 3;
-}
-
-
-.flex-4x{
-  flex-grow: 4;
-}
-
-
-.flex-5x{
-  flex-grow: 5;
-}
-

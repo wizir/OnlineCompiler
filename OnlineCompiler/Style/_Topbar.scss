@@ -1,7 +1,11 @@
 ﻿.Topbar{
-  margin: 0;
-  padding: 1rem 3rem;
-  font-size: 4rem;
+
   background: $blue;
   color: $secondary-1;
+  padding: 1rem 3rem;
+
+  h1{
+    margin: 0;
+    font-size: 4rem;
+  }
 }

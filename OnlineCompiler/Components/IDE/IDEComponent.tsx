@@ -1,7 +1,7 @@
 ﻿import * as React from 'react';
 
 import ToolbarComponent from "../Toolbar/ToolbarComponent";
-import SolutionExplorerComponent from "../SolutionExplorer/SolutionExplorerComponent";
+import SolutionComponent from "../Solution/SolutionComponent";
 import EditorComponent from "../Editor/EditorComponent";
 import ConsoleComponent from "../Console/ConsoleComponent";
 import { ICompilerApi} from "../CompilerApi";
@@ -51,22 +51,28 @@ class IDEComponent extends React.Component<{api: ICompilerApi}, IDEState>{
         return (
             <div className="IDE">
                 
-                <ToolbarComponent availableLanguages={this.state.availableLanguages} 
-                                  selectedLanguage={this.state.selectedLanguage} 
-                                  compileHandler={this.compileHandler} 
-                                  languageSelectedHandler={this.languageSelectedHandler} />
+                <div className="IDE_Toolbar">
+                    <ToolbarComponent availableLanguages={this.state.availableLanguages} 
+                                      selectedLanguage={this.state.selectedLanguage} 
+                                      compileHandler={this.compileHandler} 
+                                      languageSelectedHandler={this.languageSelectedHandler} 
+                    />
+                </div>
                 
-                <div className="row">
-                    
-                    <div className="flex-1x">
-                        <SolutionExplorerComponent/>
-                    </div>
-                    <div className="flex-5x">
-                        <EditorComponent defaultProgram={this.state.selectedLanguage?.defaultProgram}/>
+                <div className="IDE_ContentBox">
+                    <div className="IDE_Content">
+                        
+                        <div className="IDE_Solution">
+                            <SolutionComponent/>
+                        </div>
+                        <div className="IDE_Editor">
+                            <EditorComponent defaultProgram={this.state.selectedLanguage?.defaultProgram}/>
+                        </div>
+                        
                     </div>
                 </div>
                 
-                <div >
+                <div className="IDE_Console">
                     <ConsoleComponent/>
                     
                 </div>
