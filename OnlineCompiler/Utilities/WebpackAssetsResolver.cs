@@ -20,9 +20,10 @@ namespace OnlineCompiler.Utilities
         
         public WebpackAssetsResolver(IWebHostEnvironment env, IIpAddressResolver ipAddressResolver)
         {
-            _localIp = ipAddressResolver.GetLocalAddress().ToString();
-            
             _env = env;
+            
+            _localIp = _env.IsDevelopment() ? ipAddressResolver.GetLocalAddress().ToString() : null;
+            
             var fileName = "webpack-assets.json";
             var fileInfo = _env.WebRootFileProvider.GetFileInfo(fileName);
 
