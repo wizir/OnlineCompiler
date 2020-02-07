@@ -1,12 +1,14 @@
 ﻿.Toolbar{
   display: flex;
-  justify-content: space-between;
   height: 100%;
 }
 
 .Toolbar_Content{
   @extend .tile;
   flex: 1 1 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
   margin: 10px 10px 5px 5px;
 }
 
