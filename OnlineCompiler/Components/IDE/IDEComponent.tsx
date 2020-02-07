@@ -30,9 +30,9 @@ class IDEComponent extends React.Component<{api: ICompilerApi}, IDEState>{
 
     
     componentDidMount(): void {
-        this.api.getLanguages().then(result => this.setState({
-            selectedLanguage: result[0],
-            availableLanguages: result
+        this.api.getLanguages().then(languages => this.setState({
+            selectedLanguage: languages[0],
+            availableLanguages: languages
         }));
         
     }
@@ -40,7 +40,7 @@ class IDEComponent extends React.Component<{api: ICompilerApi}, IDEState>{
 
     compileHandler = () => {};
 
-    languageSelectedHandler = (selectedId: number) => { console.log(selectedId)};
+    languageSelectedHandler = (selected: Language) => { this.setState({selectedLanguage: selected})};
 
 
     render() {
@@ -62,7 +62,7 @@ class IDEComponent extends React.Component<{api: ICompilerApi}, IDEState>{
                         <SolutionExplorerComponent/>
                     </div>
                     <div className="flex-5x">
-                        <EditorComponent />
+                        <EditorComponent defaultProgram={this.state.selectedLanguage?.defaultProgram}/>
                     </div>
                 </div>
                 

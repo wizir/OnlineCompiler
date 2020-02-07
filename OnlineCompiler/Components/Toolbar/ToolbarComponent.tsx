@@ -15,7 +15,7 @@ const ToolbarComponent: React.FunctionComponent<ToolbarProps> = (props: ToolbarP
         <div className="Toolbar">
                 <div className="Toolbar_Languages">
                     {props.availableLanguages.map(l => <button 
-                        onClick={props.languageSelectedHandler.bind(this, l.id)} 
+                        onClick={props.languageSelectedHandler.bind(this, l)} 
                         className="Toolbar_Language" 
                         key={l.id}> {l.name}</button>)}
                 </div>
