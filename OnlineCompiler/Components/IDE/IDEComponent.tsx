@@ -50,7 +50,8 @@ class IDEComponent extends React.Component<{api: ICompilerApi}, IDEState>{
         
         return (
             <div className="IDE">
-                
+                <div className="IDE_xx">
+                    
                 <div className="IDE_Toolbar">
                     <ToolbarComponent availableLanguages={this.state.availableLanguages} 
                                       selectedLanguage={this.state.selectedLanguage} 
@@ -75,6 +76,7 @@ class IDEComponent extends React.Component<{api: ICompilerApi}, IDEState>{
                 <div className="IDE_Console">
                     <ConsoleComponent/>
                     
+                </div>
                 </div>
             </div>
         )
