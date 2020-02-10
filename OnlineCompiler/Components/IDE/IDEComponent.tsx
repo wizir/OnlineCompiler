@@ -21,7 +21,8 @@ class IDEComponent extends React.Component<{api: IProjectApi}, {}>{
 
     
 
-
+    createNewProjectHandler = () => {};
+    debugHandler = () => {};
     compileHandler = () => {};
 
 
@@ -33,7 +34,8 @@ class IDEComponent extends React.Component<{api: IProjectApi}, {}>{
                 <div className="IDE_Content">
                     
                     <div className="IDE_Toolbar">
-                        <ToolbarComponent 
+                        <ToolbarComponent createNewProjectHandler={this.createNewProjectHandler}
+                                          debugHandler={this.debugHandler}
                                           compileHandler={this.compileHandler} 
 
                         />

@@ -3,40 +3,12 @@
   @extend .tile-content;
 }
 
-.Toolbar_CompileButton{
-  margin: 5px 15px;
+.Toolbar_button{
+  background: $secondary-3;
   border: none;
-  background: $green;
-  padding: 10px 20px;
-  font-weight: bold;
-  font-size: 1.5rem;
-  outline: none;
-  
+  margin: 0 2px;
+  font-size: 1rem;
   &:hover{
-    background: lighten($green, 3);
+    background: lighten($secondary-3, 5);
   }
-}
-
-
-.Toolbar_Languages{
-  margin-left: 10px;
-  
-}
-
-.Toolbar_Language{
-  margin: 10px;
-  width: 80px;
-  border: none;
-  background: $secondary-2;
-  padding: 8px 0;
-  font-size: 1.1rem;
-  
-  &:hover{
-    background: lighten($yellow, 5);
-  }
-}
-
-.Toolbar_Language--selected{
-  background: $yellow;
-  font-weight: bold;
 }
