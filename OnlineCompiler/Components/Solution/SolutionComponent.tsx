@@ -5,7 +5,7 @@ class SolutionExplorerComponent extends React.Component{
     
     render() {
         return (
-            <div className="Solution">
+            <div className="tile">
                 <div className="Solution_Content">
                 <h3>Solution Explorer</h3>   
                 <div >Files component</div>

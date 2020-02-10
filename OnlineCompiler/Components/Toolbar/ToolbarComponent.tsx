@@ -12,7 +12,7 @@ type ToolbarProps = {
 const ToolbarComponent: React.FunctionComponent<ToolbarProps> = (props: ToolbarProps) => {
 
     return (
-        <div className="Toolbar">
+        <div className="tile">
             <div className="Toolbar_Content">
                 
                 <div className="Toolbar_Languages">

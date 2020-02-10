@@ -1,10 +1,4 @@
-﻿.Solution{
-  height: 100%;
-  display: flex;
-}
-
+﻿
 .Solution_Content{
   @extend .tile-content;
-  flex: 1 1 auto;
-  padding: 5px;
 }

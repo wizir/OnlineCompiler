@@ -1,6 +1,6 @@
 @import 'Variables';
 
-
+@import "Common";
 @import 'Topbar';
 @import 'Footer';
 @import '../Components/Console/Console';
@@ -8,55 +8,3 @@
 @import '../Components/Solution/Solution';
 @import '../Components/IDE/IDE';
 @import '../Components/Toolbar/Toolbar';
-
-html{
-  height: 100%;
-}
-
-body{
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  height: 100%;
-  background: $black;
-}
-
-h3{
-  margin: 0;
-  padding: 0;
-  color: $secondary-1;
-}
-
-
-.tile{
-  display: flex;
-  height: 100%;
-}
-
-.tile-content{
-  background: $dark;
-  margin: 1px; 
-}
-
-
-.container{
-  display: flex;
-  flex-flow: column;
-  height: 100%;
-  
-  .header{
-    flex: 0 1 auto;  
-  }
-  
-  .content{
-    flex: 1 1 auto;
-  }
-  
-  .footer{
-    flex: 0 1 auto;
-  }
-  
-}
-
-#IDE{
-  height: 100%;
-}
