@@ -2,11 +2,10 @@
 .IDE{
   display: flex;
   flex-direction: column;
-  height: calc(100% - 10px);
-  margin: 5px 0;
+  height: 100%;
 }
 
-.IDE_xx{
+.IDE_Content{
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
@@ -20,7 +19,7 @@
 .IDE_ContentBox{
   flex: 1 1 auto;
   
-  .IDE_Content{
+  .IDE_EditorSolutionExplorer{
     display: flex;
     height: 100%;
   
