@@ -7,6 +7,9 @@ import ConsoleComponent from "../Console/ConsoleComponent";
 import { IProjectApi} from "../ProjectApi";
 
 
+type IDEState = {
+    Solution: any
+}
 
 
 class IDEComponent extends React.Component<{api: IProjectApi}, {}>{
@@ -36,9 +39,7 @@ class IDEComponent extends React.Component<{api: IProjectApi}, {}>{
                     <div className="IDE_Toolbar">
                         <ToolbarComponent createNewProjectHandler={this.createNewProjectHandler}
                                           debugHandler={this.debugHandler}
-                                          compileHandler={this.compileHandler} 
-
-                        />
+                                          compileHandler={this.compileHandler}/>
                     </div>
                 
                     <div className="IDE_ContentBox">

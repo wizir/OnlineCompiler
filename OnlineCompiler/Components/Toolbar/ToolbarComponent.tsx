@@ -11,7 +11,7 @@ const ToolbarComponent: React.FunctionComponent<ToolbarProps> = (props: ToolbarP
     return (
         <div className="tile">
             <div className="Toolbar_Content">
-                <button className="Toolbar_button" onClick={props.createNewProjectHandler}>New Project</button>
+                <button className="Toolbar_button" onClick={props.createNewProjectHandler}>New...</button>
                 <button className="Toolbar_button" onClick={props.debugHandler}>Debug</button>
             <button className="Toolbar_button" onClick={props.compileHandler}>Run</button>
             </div>

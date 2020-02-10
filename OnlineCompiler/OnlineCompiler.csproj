@@ -30,9 +30,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Api" />
       <Folder Include="Features" />
-      <Folder Include="Model" />
     </ItemGroup>
 
 </Project>
