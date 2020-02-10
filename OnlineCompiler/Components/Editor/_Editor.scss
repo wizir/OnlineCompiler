@@ -1,0 +1,20 @@
+﻿.Editor_Content{
+  @extend .tile-content;
+  display: flex;
+  flex-flow: column;
+}
+
+.Editor_TextareaContainer{
+  flex: 1;
+  display: flex;
+}
+
+.Editor_Textarea{
+  flex: 1;
+  font-size: 1.3rem;
+  background: $dark-2;
+  border: 1px solid #000;
+  color: $secondary-1;
+  resize: none;
+  outline: none;
+}

@@ -1,12 +1,8 @@
 import * as ReactDOM from 'react-dom';
 import * as React from 'react';
 
-import EditorComponent from '../../Components/Editor/EditorComponent';
-import ConsoleComponent from '../../Components/Console/ConsoleComponent';
+import IDEComponent from "../../Components/IDE/IDEComponent";
+import {ProjectApi} from "../../Components/ProjectApi";
 
-
-const editor = document.getElementById('editor');
-ReactDOM.render(<EditorComponent/>, editor);
-
-const console = document.getElementById('console');
-ReactDOM.render(<ConsoleComponent/>, console);
+const node = document.getElementById('IDE');
+ReactDOM.render(<IDEComponent api={new ProjectApi()}/>, node);

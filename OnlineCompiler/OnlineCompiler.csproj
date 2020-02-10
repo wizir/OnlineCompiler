@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -6,12 +6,31 @@
 
     <ItemGroup>
       <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+      <PackageReference Include="Reinforced.Typings" Version="1.5.6" />
+      <PackageReference Include="Westwind.AspnetCore.LiveReload" Version="0.1.12" />
     </ItemGroup>
 
     <ItemGroup>
+      <TypeScriptCompile Include="Components\ProjectApi.ts" />
       <TypeScriptCompile Include="Components\Console\ConsoleComponent.tsx" />
       <TypeScriptCompile Include="Components\Editor\EditorComponent.tsx" />
+      <TypeScriptCompile Include="Components\Http.ts" />
+      <TypeScriptCompile Include="Components\IDE\IDEComponent.tsx" />
+      <TypeScriptCompile Include="Components\Toolbar\ToolbarComponent.tsx" />
       <TypeScriptCompile Include="Views\Home\Home.tsx" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\lang_desc\cpp\descriptor.json" />
+      <_ContentIncludedByDefault Remove="wwwroot\lang_desc\cpp\main.cpp" />
+      <_ContentIncludedByDefault Remove="wwwroot\lang_desc\js\descriptor.json" />
+      <_ContentIncludedByDefault Remove="wwwroot\lang_desc\js\script.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lang_desc\python\descriptor.json" />
+      <_ContentIncludedByDefault Remove="wwwroot\lang_desc\python\main.py" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Features" />
     </ItemGroup>
 
 </Project>

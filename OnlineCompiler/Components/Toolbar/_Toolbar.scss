@@ -1,0 +1,15 @@
+﻿
+.Toolbar_Content{
+  @extend .tile-content;
+}
+
+.Toolbar_button{
+  background: $secondary-3;
+  border: none;
+  margin: 0 2px;
+  font-size: 1rem;
+  outline: none;
+  &:hover{
+    background: lighten($secondary-3, 5);
+  }
+}

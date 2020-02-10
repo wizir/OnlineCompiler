@@ -1,17 +1,21 @@
 import * as React from "react";
-import {Component} from "react";
 
 
-class EditorComponent extends Component{
+type EditorProps = {
+};
+
+const EditorComponent = (props: EditorProps) => {
     
-    
-    render() {
-        return (
-          <div>
-              Editor component
-          </div>  
-        )
-    }
-}
+    return (
+      <div className="tile">
+          <div className="Editor_Content">
+              <h3>Editor</h3>
+              <div className="Editor_TextareaContainer">
+                  <textarea className="Editor_Textarea"/>
+              </div>
+          </div>
+      </div>
+    )
+};
 
 export default  EditorComponent;

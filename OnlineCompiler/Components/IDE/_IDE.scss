@@ -1,0 +1,42 @@
+﻿
+.IDE{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.IDE_Content{
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.IDE_Toolbar{
+  flex: 0 1 auto;
+  margin: 0;
+}
+
+.IDE_ContentBox{
+  flex: 1 1 auto;
+  
+  .IDE_EditorSolutionExplorer{
+    display: flex;
+    height: 100%;
+  
+    .IDE_Solution{
+      width: 20%;
+      height: 100%;
+    }
+    
+    .IDE_Editor{
+      width: 80%;
+      height: 100%;
+    }
+}
+}
+
+
+.IDE_Console{
+  flex: 0 1 auto;
+  
+}
