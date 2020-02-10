@@ -2,7 +2,6 @@ import * as React from "react";
 
 
 type EditorProps = {
-    defaultProgram: string
 };
 
 const EditorComponent = (props: EditorProps) => {
@@ -11,7 +10,7 @@ const EditorComponent = (props: EditorProps) => {
       <div className="tile">
           <div className="Editor_Content">
               <h3>Editor</h3>
-              <textarea className="Editor_Textbox" value={props.defaultProgram}/>
+              <textarea className="Editor_Textbox"/>
           </div>
       </div>
     )

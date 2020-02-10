@@ -1,9 +1,6 @@
 ﻿
 .Toolbar_Content{
   @extend .tile-content;
-  
-  display: flex;
-  justify-content: space-between;
 }
 
 .Toolbar_CompileButton{
