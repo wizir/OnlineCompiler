@@ -10,7 +10,9 @@ const EditorComponent = (props: EditorProps) => {
       <div className="tile">
           <div className="Editor_Content">
               <h3>Editor</h3>
-              <textarea className="Editor_Textbox"/>
+              <div className="Editor_TextareaContainer">
+                  <textarea className="Editor_Textarea"/>
+              </div>
           </div>
       </div>
     )

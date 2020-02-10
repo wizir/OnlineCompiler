@@ -1,6 +1,25 @@
 ﻿
-.Console_content{
+.Console_Content{
   @extend .tile-content;
   
-  height: 100px;
+  height: 200px;
+  display: flex;
+  flex-flow: column;
+}
+
+
+.Console_TextareaContainer{
+  flex: 1;
+  display: flex;;
+}
+
+.Console_Textarea
+{
+  flex: 1;
+  border: 1px solid $black;
+  background: $dark-2;
+  resize: none;
+  outline: none;
+  font-size: 1.1rem;
+  color: $secondary-1;
 }
