@@ -11,7 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <TypeScriptCompile Include="Components\CompilerApi.ts" />
+      <TypeScriptCompile Include="Components\ProjectApi.ts" />
       <TypeScriptCompile Include="Components\Console\ConsoleComponent.tsx" />
       <TypeScriptCompile Include="Components\Editor\EditorComponent.tsx" />
       <TypeScriptCompile Include="Components\Http.ts" />
@@ -19,6 +19,20 @@
       <TypeScriptCompile Include="Components\Toolbar\ToolbarComponent.tsx" />
       <TypeScriptCompile Include="Model\Language.cs.ts" />
       <TypeScriptCompile Include="Views\Home\Home.tsx" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\lang_desc\cpp\descriptor.json" />
+      <_ContentIncludedByDefault Remove="wwwroot\lang_desc\cpp\main.cpp" />
+      <_ContentIncludedByDefault Remove="wwwroot\lang_desc\js\descriptor.json" />
+      <_ContentIncludedByDefault Remove="wwwroot\lang_desc\js\script.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lang_desc\python\descriptor.json" />
+      <_ContentIncludedByDefault Remove="wwwroot\lang_desc\python\main.py" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Api" />
+      <Folder Include="Features" />
     </ItemGroup>
 
 </Project>

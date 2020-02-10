@@ -4,8 +4,8 @@ import ToolbarComponent from "../Toolbar/ToolbarComponent";
 import SolutionComponent from "../Solution/SolutionComponent";
 import EditorComponent from "../Editor/EditorComponent";
 import ConsoleComponent from "../Console/ConsoleComponent";
-import { ICompilerApi} from "../CompilerApi";
 import {Language} from "../../Model/Language.cs";
+import { IProjectApi} from "../ProjectApi";
 
 type IDEState = {
     selectedLanguage: Language,
@@ -14,9 +14,9 @@ type IDEState = {
 
 
 
-class IDEComponent extends React.Component<{api: ICompilerApi}, IDEState>{
+class IDEComponent extends React.Component<{api: IProjectApi}, IDEState>{
     
-    api: ICompilerApi;
+    api: IProjectApi;
     
     constructor(props) {
         super(props);
@@ -29,13 +29,6 @@ class IDEComponent extends React.Component<{api: ICompilerApi}, IDEState>{
     }
 
     
-    componentDidMount(): void {
-        this.api.getLanguages().then(languages => this.setState({
-            selectedLanguage: languages[0],
-            availableLanguages: languages
-        }));
-        
-    }
 
 
     compileHandler = () => {};

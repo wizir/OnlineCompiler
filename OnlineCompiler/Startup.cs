@@ -23,7 +23,6 @@ namespace OnlineCompiler
         {
             services.AddControllersWithViews();
             services.AddLiveReload();
-            services.AddTransient<ILanguagesProvider, LanguagesesProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
