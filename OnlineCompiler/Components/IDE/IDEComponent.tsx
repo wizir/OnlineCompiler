@@ -24,7 +24,7 @@ class IDEComponent extends React.Component<{api: IProjectApi}, IDEState>{
         
         this.state = {
             Solution: null,
-            showNewProjectModal: true   
+            showNewProjectModal: false   
         }
     }
 
@@ -32,9 +32,17 @@ class IDEComponent extends React.Component<{api: IProjectApi}, IDEState>{
 
     createNewProjectHandler = () => {
         this.setState({
-            showNewProjectModal: true
-        })
+            showNewProjectModal: false
+        });
     };
+    
+    openCreateNewProjectModalHandler = () => {
+        this.setState({
+            showNewProjectModal: true
+        });
+    };
+    
+    
     debugHandler = () => {};
     compileHandler = () => {};
 
@@ -47,7 +55,7 @@ class IDEComponent extends React.Component<{api: IProjectApi}, IDEState>{
                 <div className="IDE_Content">
                     
                     <div className="IDE_Toolbar">
-                        <ToolbarComponent createNewProjectHandler={this.createNewProjectHandler}
+                        <ToolbarComponent createNewProjectHandler={this.openCreateNewProjectModalHandler}
                                           debugHandler={this.debugHandler}
                                           compileHandler={this.compileHandler}/>
                     </div>
@@ -70,7 +78,7 @@ class IDEComponent extends React.Component<{api: IProjectApi}, IDEState>{
                         
                     </div>
                 </div>
-                { this.state.showNewProjectModal ? <NewProjectModalComponent /> : null}
+                { this.state.showNewProjectModal ? <NewProjectModalComponent createProjectHandler={this.createNewProjectHandler}/> : null}
             </div>
         )
     }
