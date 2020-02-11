@@ -3,16 +3,18 @@
 import ToolbarComponent from "../Toolbar/ToolbarComponent";
 import SolutionComponent from "../Solution/SolutionComponent";
 import EditorComponent from "../Editor/EditorComponent";
+import NewProjectModalComponent from "../Modals/NewProjectModal/NewProjectModalComponent";
 import ConsoleComponent from "../Console/ConsoleComponent";
 import { IProjectApi} from "../ProjectApi";
 
 
 type IDEState = {
-    Solution: any
+    Solution: any,
+    showNewProjectModal: boolean
 }
 
 
-class IDEComponent extends React.Component<{api: IProjectApi}, {}>{
+class IDEComponent extends React.Component<{api: IProjectApi}, IDEState>{
     
     api: IProjectApi;
     
@@ -20,11 +22,19 @@ class IDEComponent extends React.Component<{api: IProjectApi}, {}>{
         super(props);
         this.api = props.api;
         
+        this.state = {
+            Solution: null,
+            showNewProjectModal: true   
+        }
     }
 
     
 
-    createNewProjectHandler = () => {};
+    createNewProjectHandler = () => {
+        this.setState({
+            showNewProjectModal: true
+        })
+    };
     debugHandler = () => {};
     compileHandler = () => {};
 
@@ -60,6 +70,7 @@ class IDEComponent extends React.Component<{api: IProjectApi}, {}>{
                         
                     </div>
                 </div>
+                { this.state.showNewProjectModal ? <NewProjectModalComponent /> : null}
             </div>
         )
     }
